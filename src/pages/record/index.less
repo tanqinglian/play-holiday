@@ -1,0 +1,34 @@
+.record-page { min-height: 100vh; padding: 12px 32px calc(48px + env(safe-area-inset-bottom)); box-sizing: border-box; }
+.record-section { margin-top: 28px; }
+.record-section--first { margin-top: 8px; }
+.record-section-title { display: block; color: var(--ph-ink); font-size: 28px; font-weight: 700; }
+.record-section-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.record-section-count { color: var(--ph-ink-secondary); font-size: 23px; }
+.result-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+.result-choice { min-height: 104px; margin: 0; padding: 0; border: 2px solid var(--ph-border); border-radius: 18px; color: var(--ph-ink); background: var(--ph-surface); font-size: 29px; font-weight: 700; line-height: 100px; }
+.result-choice--active { color: var(--ph-primary); border-color: var(--ph-primary); background: var(--ph-surface-tint); }
+.coordinate-picker { display: flex; width: 100%; min-height: 112px; margin: 14px 0 0; padding: 18px 22px; align-items: center; justify-content: space-between; gap: 16px; box-sizing: border-box; border: 2px solid var(--ph-border); border-radius: 20px; text-align: left; color: var(--ph-ink); background: var(--ph-surface); line-height: 1.35; }
+.coordinate-picker--selected { border-color: #8bbdaf; }
+.coordinate-picker__copy { display: flex; min-width: 0; flex: 1; flex-direction: column; }
+.coordinate-picker__name { font-size: 28px; font-weight: 650; }
+.coordinate-picker__address { display: block; margin-top: 7px; overflow: hidden; color: var(--ph-ink-secondary); font-size: 22px; text-overflow: ellipsis; white-space: nowrap; }
+.coordinate-picker__action { flex: none; color: var(--ph-primary); font-size: 25px; font-weight: 650; }
+.clear-coordinate { min-height: 72px; margin: 6px 0 0 auto; padding: 0 10px; color: var(--ph-danger); background: transparent; font-size: 22px; line-height: 72px; }
+.location-description { width: 100%; min-height: 132px; margin-top: 14px; padding: 20px 22px; box-sizing: border-box; border: 2px solid var(--ph-border); border-radius: 18px; color: var(--ph-ink); background: var(--ph-surface); font-size: 26px; line-height: 1.5; }
+.photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+.photo-item { position: relative; aspect-ratio: 1; }
+.photo-preview { width: 100%; height: 100%; border-radius: 16px; background: #e5ece9; }
+.photo-remove { position: absolute; top: -12px; right: -12px; width: 56px; min-width: 56px; height: 56px; min-height: 56px; margin: 0; padding: 0; border-radius: 50%; color: #fff; background: var(--ph-danger); font-size: 30px; line-height: 54px; }
+.photo-picker { aspect-ratio: 1; min-height: 0; margin: 0; padding: 0 12px; border: 2px dashed #9eb9b0; border-radius: 16px; color: var(--ph-primary); background: var(--ph-surface); font-size: 24px; line-height: 1.35; }
+.purpose-options { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+.purpose-option { min-height: 96px; margin: 0; padding: 0 12px; border: 2px solid var(--ph-border); border-radius: 18px; color: var(--ph-ink-secondary); background: var(--ph-surface); font-size: 26px; line-height: 92px; }
+.purpose-option--active { color: var(--ph-primary); border-color: var(--ph-primary); background: var(--ph-surface-tint); font-weight: 700; }
+.purpose-option[disabled] { color: #88958f; background: #e9eeec; }
+.save-trip { min-height: 104px; margin-top: 32px; border: 0; border-radius: 20px; color: #fff; background: var(--ph-primary); font-size: 30px; font-weight: 700; line-height: 104px; }
+.save-trip[disabled] { color: #7d8c87; background: #d8e0dd; }
+.save-trip--pressed { background: var(--ph-primary-pressed); }
+.fish-entry { display: flex; min-height: 96px; margin-top: 24px; padding: 12px 12px 12px 22px; align-items: center; justify-content: space-between; box-sizing: border-box; border: 2px solid var(--ph-border); border-radius: 18px; background: var(--ph-surface); }
+.fish-entry__title { font-size: 27px; font-weight: 650; }
+.fish-entry__button { min-width: 128px; min-height: 72px; margin: 0; padding: 0 18px; border: 0; border-radius: 14px; color: var(--ph-primary); background: var(--ph-surface-tint); font-size: 24px; line-height: 72px; }
+.record-control--pressed { opacity: .74; }
+.result-choice::after, .coordinate-picker::after, .clear-coordinate::after, .photo-picker::after, .photo-remove::after, .purpose-option::after, .save-trip::after, .fish-entry__button::after { border: 0; }

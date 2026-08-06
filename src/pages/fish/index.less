@@ -1,0 +1,160 @@
+.fish-page {
+  min-height: 100vh;
+  padding: 24px 32px calc(48px + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+}
+
+.fish-hero {
+  display: flex;
+  padding: 28px 0 30px;
+  flex-direction: column;
+}
+
+.fish-eyebrow {
+  font-size: 24px;
+  font-weight: 650;
+  color: var(--ph-primary);
+}
+
+.fish-title {
+  margin-top: 8px;
+  font-size: 42px;
+  font-weight: 750;
+}
+
+.fish-subtitle {
+  margin-top: 10px;
+  font-size: 24px;
+  line-height: 1.55;
+  color: var(--ph-ink-secondary);
+}
+
+.fish-preview,
+.fish-placeholder {
+  width: 100%;
+  height: 440px;
+  background: var(--ph-surface);
+  border: 2px solid var(--ph-border);
+  border-radius: 24px;
+  box-sizing: border-box;
+}
+
+.fish-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--ph-ink-secondary);
+  font-size: 28px;
+}
+
+.fish-placeholder__helper {
+  margin-top: 10px;
+  font-size: 23px;
+}
+
+.fish-button {
+  min-height: 96px;
+  border-radius: 20px;
+  font-size: 29px;
+  font-weight: 700;
+  line-height: 96px;
+}
+
+.fish-button--secondary {
+  margin-top: 24px;
+  color: var(--ph-primary);
+  background: var(--ph-surface);
+  border: 2px solid var(--ph-primary);
+}
+
+.fish-button--primary {
+  margin-top: 16px;
+  color: #fff;
+  background: var(--ph-primary);
+}
+
+.fish-button--pressed {
+  opacity: 0.76;
+}
+
+.fish-results,
+.fish-empty {
+  margin-top: 32px;
+}
+
+.fish-results__heading {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.fish-result,
+.fish-empty {
+  padding: 26px;
+  background: var(--ph-surface);
+  border: 2px solid var(--ph-border);
+  border-radius: 22px;
+}
+
+.fish-result + .fish-result {
+  margin-top: 16px;
+}
+
+.fish-result__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.fish-result__name-wrap {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+}
+
+.fish-result__name {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.fish-result__sci,
+.fish-result__detail,
+.fish-result__hint,
+.fish-empty__text {
+  margin-top: 8px;
+  font-size: 23px;
+  line-height: 1.55;
+  color: var(--ph-ink-secondary);
+}
+
+.fish-result__probability {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  color: var(--ph-water);
+  background: #e7f2f7;
+  border-radius: 999px;
+  font-size: 23px;
+  font-weight: 650;
+}
+
+.fish-result__detail,
+.fish-result__hint {
+  display: block;
+}
+
+.fish-result__hint {
+  color: var(--ph-warning);
+}
+
+.fish-empty__title {
+  font-size: 29px;
+  font-weight: 700;
+}
+
+.fish-empty__text {
+  display: block;
+}

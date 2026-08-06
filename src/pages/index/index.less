@@ -1,0 +1,54 @@
+.home-page { min-height: 100vh; padding: 0 32px calc(48px + env(safe-area-inset-bottom)); box-sizing: border-box; background: #f3f7f5; color: #14231f; }
+.home-navigation { margin: 0 -32px; background: #f3f7f5; }
+.home-navigation__bar { display: flex; align-items: center; justify-content: center; box-sizing: border-box; }
+.home-navigation__title-group { display: flex; align-items: center; justify-content: center; gap: 12px; white-space: nowrap; }
+.home-navigation__title { font-size: 30px; font-weight: 700; line-height: 1; }
+.decision-card { padding: 32px; border-radius: 28px; color: #fff; background: #126b57; }
+.decision-card--conditional { background: #76501c; }
+.decision-card--avoid { background: #7f2d25; }
+.decision-card__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.decision-card__top > view { display: flex; min-width: 0; flex: 1; flex-direction: column; }
+.home-eyebrow { font-size: 24px; font-weight: 650; opacity: .82; letter-spacing: 1px; }
+.home-title { display: block; margin-top: 10px; font-size: 42px; font-weight: 750; line-height: 1.2; }
+.locate-cta { flex: none; min-width: 164px; min-height: 88px; margin: 0; padding: 0 20px; border: 1px solid rgba(255,255,255,.38); border-radius: 18px; color: #fff; background: rgba(255,255,255,.12); font-size: 24px; line-height: 88px; }
+.info-cta { display: flex; width: 88px; min-width: 88px; height: 88px; min-height: 88px; margin: 0; padding: 0; align-items: center; justify-content: center; border: 0; color: #126b57; background: transparent; line-height: 1; }
+.info-cta__glyph { display: flex; width: 54px; height: 54px; align-items: center; justify-content: center; border: 2px solid #aac8be; border-radius: 50%; background: #fff; font-family: Georgia, serif; font-size: 25px; font-weight: 700; line-height: 1; }
+.locate-cta--pressed { background: rgba(255,255,255,.22); }
+.info-cta--pressed .info-cta__glyph { background: #dcece6; }
+.locate-cta[disabled] { color: rgba(255,255,255,.65) !important; background: rgba(255,255,255,.08) !important; }
+.locate-cta::after, .info-cta::after, .home-place-card::after, .section-link::after, .primary-cta::after, .secondary-cta::after { border: 0; }
+.weather-main { display: flex; margin-top: 28px; align-items: center; gap: 18px; }
+.weather-temperature { flex: none; font-size: 68px; font-weight: 760; line-height: 1; font-variant-numeric: tabular-nums; }
+.weather-copy { display: flex; min-width: 0; flex: 1; flex-direction: column; }
+.weather-state { font-size: 27px; font-weight: 650; }
+.weather-meta { margin-top: 7px; font-size: 22px; line-height: 1.45; opacity: .82; }
+.advice-score { flex: none; padding: 10px 13px; border-radius: 999px; color: #173f35; background: #fff; font-size: 23px; font-weight: 750; }
+.decision-summary { display: block; margin-top: 20px; font-size: 25px; line-height: 1.5; }
+.advice-strip { margin-top: 18px; padding: 18px 20px; border-radius: 18px; background: rgba(255,255,255,.12); }
+.advice-strip__text { display: block; font-size: 25px; line-height: 1.45; font-weight: 600; }
+.section-head { display: flex; margin: 36px 0 16px; align-items: center; justify-content: space-between; gap: 16px; }
+.section-head > view { display: flex; min-width: 0; flex: 1; flex-direction: column; }
+.section-title { font-size: 34px; font-weight: 720; }
+.section-subtitle { margin-top: 6px; color: #4b625b; font-size: 23px; line-height: 1.45; }
+.section-link { min-width: 164px; min-height: 96px; margin: 0; padding: 0 16px; border: 2px solid #d7e2de; border-radius: 18px; color: #126b57; background: #fff; font-size: 25px; line-height: 92px; }
+.home-place-list { display: flex; flex-direction: column; gap: 16px; }
+.home-place-card { width: 100%; min-height: 160px; margin: 0; padding: 24px; border: 2px solid #d7e2de; border-radius: 22px; text-align: left; color: #18342d; background: #fff; line-height: 1.4; }
+.home-place-card--pressed { background: #eaf3ef; border-color: #9fc9bc; }
+.home-place-card__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.home-place-card__name, .home-place-card__address { display: block; }
+.home-place-card__name { flex: 1; font-size: 30px; font-weight: 700; }
+.home-place-card__address { margin-top: 9px; color: #4b625b; font-size: 24px; }
+.distance-badge { flex: none; padding: 7px 12px; border-radius: 999px; color: #126b57; background: #e6f2ee; font-size: 21px; font-variant-numeric: tabular-nums; }
+.condition-line { display: flex; margin-top: 16px; align-items: center; gap: 12px; }
+.home-fee { flex: none; padding: 7px 13px; border-radius: 999px; font-size: 21px; }
+.home-fee--paid { color: #8a4c0d; background: #fff0d9; }
+.home-fee--free { color: #126b57; background: #e3f3ed; }
+.home-fee--unknown { color: #576963; background: #edf1ef; }
+.condition-line__freshness { color: #4b625b; font-size: 22px; }
+.home-load-state { margin-top: 20px; padding: 28px 24px; border: 2px solid #d7e2de; border-radius: 22px; text-align: center; color: #4b625b; background: #fff; font-size: 25px; line-height: 1.5; }
+.home-load-state text { display: block; }
+.home-load-state button { min-height: 96px; margin-top: 18px; border: 0; color: #126b57; background: #e4f0ec; line-height: 96px; }
+.home-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 26px; }
+.primary-cta, .secondary-cta { min-height: 104px; margin: 0; border: 0; border-radius: 20px; font-size: 27px; font-weight: 700; line-height: 104px; }
+.primary-cta { color: #fff; background: #126b57; }
+.secondary-cta { color: #126b57; background: #e3f0eb; }

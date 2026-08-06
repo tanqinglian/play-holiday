@@ -1,0 +1,277 @@
+.clues-page {
+  min-height: 100vh;
+  padding: 24px 32px calc(48px + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+}
+
+.clues-hero {
+  display: flex;
+  padding: 28px 0 30px;
+  flex-direction: column;
+}
+
+.clues-eyebrow {
+  color: var(--ph-primary);
+  font-size: 24px;
+  font-weight: 650;
+}
+
+.clues-title {
+  margin-top: 8px;
+  font-size: 40px;
+  font-weight: 750;
+}
+
+.clues-subtitle,
+.guardrail-card__text,
+.field-help,
+.clue-card__meta {
+  color: var(--ph-ink-secondary);
+  font-size: 24px;
+  line-height: 1.55;
+}
+
+.clues-subtitle {
+  margin-top: 10px;
+}
+
+.guardrail-card {
+  padding: 24px;
+  background: #fff7e9;
+  border: 2px solid #edcda3;
+  border-radius: 24px;
+}
+
+.guardrail-card__title {
+  display: block;
+  color: #7a3d00;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.guardrail-card__text {
+  display: block;
+  margin-top: 8px;
+}
+
+.clue-form {
+  margin-top: 24px;
+  padding: 26px;
+  background: var(--ph-surface);
+  border: 2px solid var(--ph-border);
+  border-radius: 24px;
+}
+
+.seed-section {
+  margin-top: 24px;
+  padding: 26px;
+  background: var(--ph-surface);
+  border: 2px solid var(--ph-border);
+  border-radius: 24px;
+}
+
+.seed-summary {
+  display: flex;
+  margin-bottom: 26px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.seed-summary__value {
+  color: var(--ph-primary);
+  font-size: 44px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+
+.seed-summary__label {
+  margin-left: 10px;
+  color: var(--ph-ink-secondary);
+  font-size: 23px;
+}
+
+.seed-summary__status,
+.seed-card__status {
+  padding: 8px 14px;
+  color: #7a3d00;
+  background: #fff1df;
+  border-radius: 999px;
+  font-size: 21px;
+  font-weight: 650;
+}
+
+.seed-result-count {
+  display: block;
+  margin-top: 16px;
+  color: var(--ph-ink-secondary);
+  font-size: 22px;
+}
+
+.seed-list {
+  margin-top: 12px;
+}
+
+.seed-card {
+  padding: 22px 0;
+  border-top: 2px solid var(--ph-border);
+}
+
+.seed-card__name {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.seed-card__address,
+.seed-card__facts,
+.seed-card__source {
+  display: block;
+  margin-top: 8px;
+  color: var(--ph-ink-secondary);
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.seed-card__source {
+  color: #6d4c21;
+}
+
+.clue-form__title {
+  display: block;
+  margin-bottom: 24px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.field-label {
+  display: block;
+  font-size: 28px;
+  font-weight: 650;
+}
+
+.field-label--spaced {
+  margin-top: 28px;
+}
+
+.field-help {
+  display: block;
+  margin-top: 6px;
+}
+
+.share-textarea,
+.place-input {
+  width: 100%;
+  margin-top: 14px;
+  padding: 20px;
+  color: var(--ph-ink);
+  background: var(--ph-canvas);
+  border: 2px solid var(--ph-border);
+  border-radius: 16px;
+  box-sizing: border-box;
+  font-size: 27px;
+}
+
+.share-textarea {
+  min-height: 220px;
+  line-height: 1.5;
+}
+
+.place-input {
+  height: 96px;
+}
+
+.save-clue {
+  min-height: 96px;
+  margin: 28px 0 0;
+  color: #fff;
+  background: var(--ph-primary);
+  border-radius: 20px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 96px;
+}
+
+.save-clue[disabled] {
+  color: #71827d;
+  background: #dce5e2;
+}
+
+.save-clue--pressed,
+.delete-clue--pressed {
+  opacity: 0.76;
+}
+
+.clue-list-section {
+  margin-top: 32px;
+}
+
+.clue-list-heading,
+.clue-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.clue-list-title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.clue-list-count {
+  color: var(--ph-ink-secondary);
+  font-size: 23px;
+}
+
+.clue-empty,
+.clue-card {
+  margin-top: 16px;
+  padding: 24px;
+  background: var(--ph-surface);
+  border: 2px solid var(--ph-border);
+  border-radius: 24px;
+}
+
+.clue-empty {
+  color: var(--ph-ink-secondary);
+  text-align: center;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.clue-card__platform {
+  font-size: 26px;
+  font-weight: 650;
+}
+
+.clue-card__status {
+  padding: 8px 14px;
+  color: #7a3d00;
+  background: #fff1df;
+  border-radius: 999px;
+  font-size: 21px;
+  font-weight: 650;
+}
+
+.clue-card__place {
+  display: block;
+  margin-top: 16px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.clue-card__meta {
+  display: block;
+  margin-top: 8px;
+}
+
+.delete-clue {
+  min-height: 96px;
+  margin: 20px 0 0;
+  padding: 0 22px;
+  color: var(--ph-danger);
+  background: #fff0ee;
+  border-radius: 16px;
+  font-size: 24px;
+  line-height: 96px;
+}

@@ -1,0 +1,10 @@
+packages:
+  - server
+
+onlyBuiltDependencies:
+  - '@tarojs/binding'
+  - '@parcel/watcher'
+  - '@swc/core'
+  - esbuild
+  - core-js
+  - core-js-pure

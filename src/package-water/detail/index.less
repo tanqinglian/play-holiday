@@ -1,0 +1,88 @@
+@ink: #18342d;
+@muted: #637872;
+@green: #126b57;
+@line: #d9e5e1;
+
+.place-detail-page { min-height: 100vh; padding: 28px 24px 150px; box-sizing: border-box; background: #f4f8f6; color: @ink; }
+.detail-hero { padding: 34px 30px; border-radius: 28px; background: linear-gradient(145deg, #0f6752, #174f43); color: #fff; box-shadow: 0 16px 40px rgba(16, 77, 62, .18); }
+.detail-eyebrow, .detail-title, .detail-address, .section-title, .section-meta, .fact-label, .fact-value, .comment-card__source, .comment-card__time, .comment-card__text, .comment-card__rating, .source-card__text, .source-card__meta, .empty-copy { display: block; }
+.detail-eyebrow { font-size: 24px; opacity: .78; letter-spacing: 2px; }
+.detail-title { margin-top: 12px; font-size: 42px; line-height: 1.25; font-weight: 700; }
+.detail-address { margin-top: 12px; font-size: 27px; line-height: 1.5; opacity: .9; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.detail-tag { padding: 8px 16px; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; font-size: 22px; background: rgba(255,255,255,.1); }
+.weather-card { margin-top: 22px; padding: 28px; border: 2px solid #a9d2c5; border-radius: 24px; background: #e6f2ee; }
+.weather-card--conditional { border-color: #e3c18e; background: #fff5e7; }
+.weather-card--avoid { border-color: #e0aaa5; background: #fff0ee; }
+.weather-card__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.weather-card__head > view { display: flex; min-width: 0; flex: 1; flex-direction: column; }
+.weather-card__eyebrow, .weather-card__title, .weather-facts__value, .weather-facts__label, .weather-card__summary, .tactic-item, .weather-caution, .weather-unavailable__title, .weather-unavailable__text { display: block; }
+.weather-card__eyebrow { color: #4b625b; font-size: 22px; }
+.weather-card__title { margin-top: 6px; font-size: 32px; font-weight: 720; }
+.weather-card__score { flex: none; padding: 9px 13px; border-radius: 999px; color: #fff; background: #126b57; font-size: 23px; font-weight: 700; }
+.weather-card--conditional .weather-card__score { background: #8b5714; }
+.weather-card--avoid .weather-card__score { background: #9b3027; }
+.weather-facts { display: grid; margin-top: 22px; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.weather-facts > view { padding: 16px 10px; border-radius: 16px; text-align: center; background: rgba(255,255,255,.72); }
+.weather-facts__value { font-size: 31px; font-weight: 720; font-variant-numeric: tabular-nums; }
+.weather-facts__label { margin-top: 4px; color: #4b625b; font-size: 20px; }
+.weather-card__summary { margin-top: 20px; font-size: 25px; line-height: 1.5; }
+.tactic-list { display: flex; margin-top: 14px; flex-direction: column; gap: 10px; }
+.tactic-item { padding-left: 18px; border-left: 5px solid #1976a3; font-size: 24px; line-height: 1.5; }
+.weather-caution { margin-top: 15px; padding: 14px 16px; border-radius: 14px; color: #7c4000; background: #fff0d8; font-size: 22px; line-height: 1.5; }
+.weather-unavailable { margin-top: 22px; padding: 26px; border: 2px dashed #c9d6d1; border-radius: 22px; background: #fff; }
+.weather-unavailable__title { font-size: 27px; font-weight: 700; }
+.weather-unavailable__text { margin-top: 8px; color: @muted; font-size: 23px; line-height: 1.5; }
+.live-card { margin-top: 22px; padding: 28px; border: 2px solid @line; border-radius: 24px; background: #fff; }
+.live-card .section-head > view { display: flex; flex: 1; min-width: 0; flex-direction: column; }
+.live-card__window, .live-card__count, .live-status__label, .live-status__value, .live-card__time, .live-form__label, .live-form__privacy { display: block; }
+.live-card__window { margin-top: 5px; color: @muted; font-size: 22px; }
+.live-card__count { flex: none; color: @green; font-size: 23px; font-weight: 650; }
+.live-status-row { display: grid; margin-top: 20px; grid-template-columns: 1fr 1fr; gap: 12px; }
+.live-status-row > view { padding: 18px; border-radius: 16px; background: #f1f7f4; }
+.live-status__label { color: @muted; font-size: 21px; }
+.live-status__value { margin-top: 5px; font-size: 27px; font-weight: 700; }
+.live-card__time { margin-top: 13px; color: @muted; font-size: 21px; }
+.live-update-action { min-height: 96px; margin-top: 20px; border: 0; border-radius: 18px; color: @green; background: #e3f0eb; font-size: 26px; font-weight: 650; line-height: 96px; }
+.live-update-action--pressed { background: #d2e8df; }
+.live-form { margin-top: 18px; padding-top: 20px; border-top: 2px solid #edf2f0; }
+.live-form__label { margin: 16px 0 12px; font-size: 25px; font-weight: 650; }
+.live-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.live-option { min-height: 88px; margin: 0; padding: 0 8px; border: 2px solid #d7e2de; border-radius: 16px; color: #4b625b; background: #fff; font-size: 22px; line-height: 1.25; }
+.live-option::after, .live-update-action::after, .live-submit::after { border: 0; }
+.live-option--active { color: #0d5747; border-color: #69a996; background: #dff0ea; font-weight: 700; }
+.live-form__privacy { margin-top: 18px; color: @muted; font-size: 21px; line-height: 1.5; }
+.live-submit { min-height: 96px; margin-top: 18px; border: 0; border-radius: 18px; color: #fff; background: @green; font-size: 27px; font-weight: 700; line-height: 96px; }
+.live-submit[disabled] { color: #879690 !important; background: #e6ece9 !important; }
+.detail-section, .detail-card { margin-top: 22px; padding: 28px; border-radius: 24px; background: #fff; border: 1px solid @line; }
+.section-head { display: flex; align-items: center; justify-content: space-between; }
+.section-title { font-size: 31px; line-height: 1.4; font-weight: 700; }
+.section-meta { font-size: 24px; color: @muted; }
+.image-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 20px; }
+.place-image { width: 100%; height: 230px; border-radius: 16px; background: #e9f0ed; }
+.fact-row { display: flex; gap: 24px; padding: 22px 0; border-bottom: 1px solid #edf2f0; }
+.fact-row:last-child { border-bottom: 0; padding-bottom: 0; }
+.fact-label { width: 90px; flex: none; font-size: 25px; color: @muted; }
+.fact-value { font-size: 27px; line-height: 1.5; flex: 1; }
+.comment-card { margin-top: 18px; padding: 22px; border-radius: 18px; background: #f7faf9; }
+.comment-card__head { display: flex; justify-content: space-between; gap: 16px; }
+.comment-card__source, .comment-card__time { font-size: 22px; color: @muted; }
+.comment-card__text { margin-top: 12px; font-size: 27px; line-height: 1.6; }
+.comment-card__rating { margin-top: 10px; font-size: 22px; color: #9a6b16; }
+.empty-copy { margin-top: 20px; color: @muted; font-size: 26px; }
+.disabled-submit { min-height: 96px; margin-top: 24px; border: 0; border-radius: 18px; font-size: 27px; background: #e6ece9 !important; color: #879690 !important; }
+.source-card__text { margin-top: 16px; font-size: 26px; line-height: 1.6; color: #405a52; }
+.source-card__meta { margin-top: 12px; font-size: 22px; color: @muted; word-break: break-all; }
+.source-copy { min-height: 96px; margin-top: 18px; border: 0; border-radius: 16px; color: @green; background: #e7f1ed; font-size: 25px; line-height: 96px; }
+.sticky-actions { position: fixed; left: 24px; right: 24px; bottom: calc(20px + env(safe-area-inset-bottom)); z-index: 20; display: grid; grid-template-columns: 180px 1fr; gap: 14px; padding: 12px; border-radius: 24px; background: rgba(255,255,255,.96); box-shadow: 0 10px 34px rgba(20,52,44,.18); }
+.favorite-action, .navigate-action { min-height: 96px; border: 0; border-radius: 18px; font-size: 27px; line-height: 96px; }
+.favorite-action { background: #e6f1ed; color: @green; }
+.favorite-action--active { background: #cde6dd; }
+.navigate-action { background: @green; color: #fff; }
+.navigate-action[disabled] { background: #e5ebe8 !important; color: #85938e !important; }
+.detail-state { min-height: 100vh; padding: 180px 48px 48px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; text-align: center; background: #f4f8f6; color: @muted; font-size: 28px; }
+.detail-state__title { display: block; font-size: 36px; color: @ink; font-weight: 700; }
+.detail-state__text { display: block; margin-top: 16px; line-height: 1.6; }
+.detail-state__action, .detail-state__back { width: 100%; min-height: 96px; margin-top: 32px; border: 0; border-radius: 18px; font-size: 28px; }
+.detail-state__action { color: #fff; background: @green; }
+.detail-state__back { margin-top: 14px; color: @green; background: #e5f0ec; }

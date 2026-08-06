@@ -1,0 +1,11 @@
+node_modules/
+server/node_modules/
+server/generated/
+server/.env
+dist/
+dist-h5/
+.artifacts/
+.DS_Store
+*.log
+server/logs/
+.swc/

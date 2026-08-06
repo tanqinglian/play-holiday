@@ -1,0 +1,73 @@
+{
+  "name": "play-holiday",
+  "version": "1.0.0",
+  "private": true,
+  "description": "武汉台钓出钓决策与私人记录小程序",
+  "templateInfo": {
+    "name": "default",
+    "typescript": true,
+    "css": "less",
+    "framework": "React",
+    "compiler": "Vite"
+  },
+  "packageManager": "pnpm@10.29.2",
+  "scripts": {
+    "build:weapp": "taro build --type weapp",
+    "build:weapp:prod": "PLAY_HOLIDAY_API_BASE_URL=https://play-holiday-api-292138-10-1321291642.sh.run.tcloudbase.com PLAY_HOLIDAY_CLOUD_ENV_ID=play-holiday-d7guw68wn3455561a PLAY_HOLIDAY_CLOUD_SERVICE=play-holiday-api taro build --type weapp",
+    "dev:weapp": "taro build --type weapp --watch",
+    "dev": "npm run dev:weapp",
+    "build": "npm run build:weapp",
+    "typecheck": "tsc --noEmit",
+    "test:smoke": "node --test tests/smoke/*.test.mjs",
+    "test:unit": "node --test tests/unit/*.test.mjs",
+    "server:dev": "pnpm --dir server dev",
+    "server:build": "pnpm --dir server build",
+    "server:test": "pnpm --dir server test",
+    "server:typecheck": "pnpm --dir server typecheck",
+    "server:db:migrate": "pnpm --dir server db:migrate",
+    "server:db:seed": "pnpm --dir server db:seed",
+    "seed:collect:wuhan": "node initdata-script/collect-wuhan-seeds.mjs",
+    "seed:collect:wuhan:coordinates": "node initdata-script/collect-wuhan-coordinate-seeds.mjs",
+    "seed:enrich:wuhan": "node initdata-script/enrich-wuhan-details.mjs",
+    "test:e2e:preflight": "node scripts/e2e-preflight.mjs",
+    "test:e2e": "pnpm build:weapp && pnpm test:e2e:preflight && node scripts/run-native-e2e.mjs",
+    "verify": "pnpm typecheck && pnpm server:typecheck && pnpm server:build && pnpm build:weapp && pnpm test:unit && pnpm test:smoke && pnpm server:test"
+  },
+  "browserslist": [
+    "defaults and fully supports es6-module",
+    "maintained node versions"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.24.0",
+    "@tarojs/components": "4.2.0",
+    "@tarojs/helper": "4.2.0",
+    "@tarojs/plugin-framework-react": "4.2.0",
+    "@tarojs/plugin-platform-weapp": "4.2.0",
+    "@tarojs/react": "4.2.0",
+    "@tarojs/runtime": "4.2.0",
+    "@tarojs/shared": "4.2.0",
+    "@tarojs/taro": "4.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-react": "^7.28.5",
+    "@tarojs/cli": "4.2.0",
+    "@tarojs/taro-loader": "4.2.0",
+    "@tarojs/vite-runner": "4.2.0",
+    "@types/node": "^20.11.20",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.3.7",
+    "@types/webpack-env": "^1.18.4",
+    "@vitejs/plugin-react": "^4.7.0",
+    "babel-preset-taro": "4.2.0",
+    "less": "^4.6.4",
+    "miniprogram-automator": "0.12.1",
+    "typescript": "^5.3.3",
+    "vite": "^4.5.14"
+  }
+}

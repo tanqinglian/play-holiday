@@ -1,0 +1,14 @@
+.git
+.artifacts
+.claude
+.swc
+dist
+node_modules
+server/dist
+server/node_modules
+server/.env
+server/.env.*
+!server/.env.example
+initdata-script/data
+*.log
+*.sql

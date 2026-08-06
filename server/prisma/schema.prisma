@@ -1,0 +1,211 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+enum PlaceCategory {
+  wild_spot
+  fishery
+  water_body
+  tackle_shop
+  private_spot
+}
+
+enum FeeType {
+  free
+  paid
+  unknown
+}
+
+enum CoordinateStatus {
+  missing
+  source_provided
+  geocoded
+  user_confirmed
+}
+
+enum LocationPrecision {
+  public_exact
+  public_coarse
+  private_exact
+}
+
+enum PlaceVisibility {
+  visible
+  hidden
+  removed
+}
+
+enum TagCategory {
+  scene
+  fee
+  method
+  species
+  status
+}
+
+enum CommentContentType {
+  external_historical
+  user_submission
+}
+
+enum SubmissionStatus {
+  pending
+  approved
+  rejected
+}
+
+enum BiteStatus {
+  no_bite
+  occasional
+  active
+}
+
+enum CrowdLevel {
+  quiet
+  normal
+  crowded
+}
+
+enum ImageOwnerType {
+  place
+  trip
+}
+
+model Place {
+  id                 String               @id @db.VarChar(80)
+  name               String               @db.VarChar(160)
+  district           String               @db.VarChar(80)
+  address            String               @db.VarChar(500)
+  category           PlaceCategory
+  feeType            FeeType              @map("fee_type")
+  feeText            String               @map("fee_text") @db.VarChar(300)
+  latitude           Float?
+  longitude          Float?
+  coordinateStatus   CoordinateStatus     @map("coordinate_status")
+  locationPrecision  LocationPrecision    @map("location_precision")
+  detailAvailable    Boolean              @default(true) @map("detail_available")
+  visibility         PlaceVisibility      @default(visible)
+  createdAt          DateTime             @default(now()) @map("created_at")
+  updatedAt          DateTime             @updatedAt @map("updated_at")
+  sources            PlaceSource[]
+  comments           PlaceComment[]
+  images             PlaceImage[]
+  tags               PlaceTag[]
+  updateSubmissions  PlaceUpdateSubmission[]
+  liveReports        PlaceLiveReport[]
+
+  @@index([visibility, district])
+  @@index([latitude, longitude])
+  @@index([feeType, category])
+  @@map("places")
+}
+
+model PlaceLiveReport {
+  id             String      @id @db.VarChar(120)
+  idempotencyKey String      @unique @map("idempotency_key") @db.VarChar(120)
+  placeId        String      @map("place_id") @db.VarChar(80)
+  biteStatus     BiteStatus  @map("bite_status")
+  crowdLevel     CrowdLevel  @map("crowd_level")
+  observedAt     DateTime    @default(now()) @map("observed_at")
+  createdAt      DateTime    @default(now()) @map("created_at")
+  place          Place       @relation(fields: [placeId], references: [id], onDelete: Cascade)
+
+  @@index([placeId, observedAt])
+  @@map("place_live_reports")
+}
+
+model PlaceSource {
+  id             Int      @id @default(autoincrement())
+  placeId        String   @map("place_id") @db.VarChar(80)
+  platform       String   @db.VarChar(50)
+  sourceRecordId String   @map("source_record_id") @db.VarChar(100)
+  sourceUrl      String   @map("source_url") @db.VarChar(1000)
+  capturedAt     DateTime @map("captured_at")
+  isVerified     Boolean  @default(false) @map("is_verified")
+  place          Place    @relation(fields: [placeId], references: [id], onDelete: Cascade)
+
+  @@unique([platform, sourceRecordId])
+  @@index([placeId])
+  @@map("place_sources")
+}
+
+model PlaceComment {
+  id               String             @id @db.VarChar(120)
+  placeId          String             @map("place_id") @db.VarChar(80)
+  text             String             @db.Text
+  rating           Float?
+  publishedLabel   String             @map("published_label") @db.VarChar(80)
+  contentType      CommentContentType @map("content_type")
+  sourcePlatform   String             @map("source_platform") @db.VarChar(50)
+  sourceCapturedAt DateTime           @map("source_captured_at")
+  createdAt        DateTime           @default(now()) @map("created_at")
+  place            Place              @relation(fields: [placeId], references: [id], onDelete: Cascade)
+
+  @@index([placeId, contentType])
+  @@map("place_comments")
+}
+
+model PlaceImage {
+  id           String  @id @db.VarChar(120)
+  placeId      String  @map("place_id") @db.VarChar(80)
+  sourceUrl    String  @map("source_url") @db.VarChar(1000)
+  localPath    String? @map("local_path") @db.VarChar(1000)
+  thumbnailUrl String? @map("thumbnail_url") @db.VarChar(1000)
+  bytes        Int?
+  sortOrder    Int     @default(0) @map("sort_order")
+  isVisible    Boolean @default(true) @map("is_visible")
+  place        Place   @relation(fields: [placeId], references: [id], onDelete: Cascade)
+
+  @@index([placeId, sortOrder])
+  @@map("place_images")
+}
+
+model PlaceTag {
+  placeId  String      @map("place_id") @db.VarChar(80)
+  category TagCategory
+  value    String      @db.VarChar(100)
+  place    Place       @relation(fields: [placeId], references: [id], onDelete: Cascade)
+
+  @@id([placeId, category, value])
+  @@index([category, value])
+  @@map("place_tags")
+}
+
+model PlaceUpdateSubmission {
+  id        String           @id @db.VarChar(120)
+  placeId   String           @map("place_id") @db.VarChar(80)
+  field     String           @db.VarChar(80)
+  value     String           @db.Text
+  note      String?          @db.Text
+  status    SubmissionStatus @default(pending)
+  createdAt DateTime         @default(now()) @map("created_at")
+  reviewedAt DateTime?       @map("reviewed_at")
+  place     Place            @relation(fields: [placeId], references: [id], onDelete: Cascade)
+
+  @@index([placeId, status, createdAt])
+  @@map("place_update_submissions")
+}
+
+model ImageAsset {
+  id                String         @id @db.VarChar(120)
+  ownerType         ImageOwnerType @map("owner_type")
+  ownerId           String         @map("owner_id") @db.VarChar(120)
+  mimeType          String         @map("mime_type") @db.VarChar(50)
+  width             Int
+  height            Int
+  byteSize          Int            @map("byte_size")
+  thumbnailByteSize Int            @map("thumbnail_byte_size")
+  sha256            String         @db.Char(64)
+  data              Bytes          @db.LongBlob
+  thumbnailData     Bytes          @map("thumbnail_data") @db.LongBlob
+  createdAt         DateTime       @default(now()) @map("created_at")
+
+  @@index([ownerType, ownerId, createdAt])
+  @@index([sha256])
+  @@map("image_assets")
+}

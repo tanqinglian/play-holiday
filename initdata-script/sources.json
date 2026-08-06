@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "diaoyu-wuhan-public-directory",
+      "platform": "diaoyu",
+      "city": "武汉市",
+      "entryUrl": "https://m.diaoyu.com/diaochang/wuhan/",
+      "pageUrlTemplate": "https://m.diaoyu.com/diaochang/wuhan/list-0-0-0-{page}.html",
+      "maxPages": 49,
+      "minimumDelayMs": 600,
+      "output": "src/data/seed/wuhan-fishing-places.v1.json",
+      "fields": [
+        "name",
+        "district",
+        "address",
+        "placeTypes",
+        "species",
+        "chargeText",
+        "sourceUrl"
+      ],
+      "excluded": [
+        "userIdentity",
+        "phone",
+        "fullDescription",
+        "preciseUserLocation"
+      ],
+      "detailFields": [
+        "commentText",
+        "commentRating",
+        "commentPublishedLabel",
+        "sourceImages"
+      ]
+    },
+    {
+      "id": "baohu-toolbox-wuhan-public-coordinates",
+      "platform": "baohu_toolbox",
+      "city": "武汉市",
+      "entryUrl": "https://www.baohugongjuxiang.cn/fishing",
+      "robotsUrl": "https://www.baohugongjuxiang.cn/robots.txt",
+      "minimumDelayMs": 2000,
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "output": "initdata-script/data/wuhan-coordinate-places.v1.json",
+      "fields": ["name", "district", "address", "latitude", "longitude", "sourceUrl"],
+      "excluded": ["userIdentity", "phone", "comments", "accountData"]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+.trip-tags { margin-top: 28px; }
+.record-section-title { display: block; color: var(--ph-ink); font-size: 28px; font-weight: 700; }
+.trip-tags__head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.trip-tags__toggle { min-width: 144px; min-height: 88px; margin: 0; padding: 0 20px; border: 0; border-radius: 16px; color: var(--ph-primary); background: var(--ph-surface-tint); font-size: 24px; line-height: 88px; }
+.trip-tags__toggle--pressed { opacity: .74; }
+.selected-tags, .tag-categories, .tag-options { display: flex; flex-wrap: wrap; gap: 12px; }
+.selected-tags { margin-top: 14px; }
+.selected-tag, .tag-category, .tag-option { min-height: 76px; margin: 0; padding: 0 18px; border-radius: 999px; font-size: 23px; line-height: 76px; }
+.selected-tag { border: 0; color: var(--ph-primary); background: var(--ph-surface-tint); }
+.tag-panel { margin-top: 16px; padding: 20px; border: 2px solid var(--ph-border); border-radius: 20px; background: var(--ph-surface); }
+.tag-search-row { display: grid; grid-template-columns: 1fr 154px; gap: 12px; }
+.tag-search { height: 88px; padding: 0 20px; box-sizing: border-box; border-radius: 14px; background: var(--ph-canvas); font-size: 25px; }
+.tag-create { min-height: 88px; margin: 0; padding: 0 12px; border: 0; border-radius: 14px; color: #fff; background: var(--ph-primary); font-size: 23px; line-height: 88px; }
+.tag-create[disabled] { color: #7d8c87; background: #dce4e1; }
+.tag-category-scroll { width: 100%; margin-top: 16px; white-space: nowrap; }
+.tag-categories { flex-wrap: nowrap; }
+.tag-category { flex: none; border: 2px solid var(--ph-border); color: var(--ph-ink-secondary); background: #fff; }
+.tag-category--active { color: #fff; border-color: var(--ph-primary); background: var(--ph-primary); }
+.tag-options { margin-top: 16px; }
+.tag-option { border: 2px solid var(--ph-border); color: var(--ph-ink-secondary); background: #fff; }
+.tag-option--active { color: var(--ph-primary); border-color: var(--ph-primary); background: var(--ph-surface-tint); font-weight: 650; }
+.selected-tag::after, .tag-category::after, .tag-option::after, .trip-tags__toggle::after, .tag-create::after { border: 0; }
