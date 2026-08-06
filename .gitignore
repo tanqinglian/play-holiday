@@ -9,3 +9,6 @@ dist-h5/
 *.log
 server/logs/
 .swc/
+
+# 钓点种子图片（体积大，不入库；本地保留，供 seed 使用）
+initdata-script/data/wuhan-images/
